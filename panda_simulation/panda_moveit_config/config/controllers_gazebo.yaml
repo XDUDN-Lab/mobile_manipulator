@@ -1,0 +1,38 @@
+controller_manager_ns: controller_manager
+controller_list:
+  - name: panda/arm_position_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: true
+    joints:
+      - panda_joint1
+      - panda_joint2
+      - panda_joint3
+      - panda_joint4
+      - panda_joint5
+      - panda_joint6
+      - panda_joint7
+
+    constraints:
+        goal_time: 0.6
+        stopped_velocity_tolerance: 0
+        panda_joint1: {trajectory: 0.1, goal: 0.0}
+        panda_joint2: {trajectory: 0.1, goal: 0.0}
+        panda_joint3: {trajectory: 0.1, goal: 0.0}
+        panda_joint4: {trajectory: 0.1, goal: 0.0}
+        panda_joint5: {trajectory: 0.1, goal: 0.0}
+        panda_joint6: {trajectory: 0.1, goal: 0.0}
+        panda_joint7: {trajectory: 0.1, goal: 0.0}
+
+    stop_trajectory_duration: 0.5
+    state_publish_rate:  25
+    action_monitor_rate: 10
+
+  - name: panda/gripper_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: true
+#    parallel: true
+    joints:
+      - panda_finger_joint1
+      - panda_finger_joint2  
