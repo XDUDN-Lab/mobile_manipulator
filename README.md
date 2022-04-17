@@ -24,20 +24,24 @@
 #### 1. MoveIt + Gazebo 联合仿真 (通过MoveIt控制Gazebo):  
 
 ```sh
-roslaunch manipulator_gazebo manipulator_bringup_moveit.launch
+roslaunch manipulator_gazebo manipulator_bringup_moveit.launch   # 存于old code文件夹下
+or
+roslaunch manipulator_gazebo mobile_manipulator_gazebo.launch
+roslaunch manipulator_gazebo mobile_manipulator_moveit.launch
 ```
 
 #### 2. Gazebo + Rviz (通过配置加载控制器起到控制移动机械臂的效果):  
 
 ```sh
 roslaunch robots_description gazebo_manipulator_demo.launch
-roslaunch robots_description gazebo_bulldog_demo.launch  # Only bulldog  
+roslaunch bulldog_gazebo bulldog_gazebo.launch   # Only bulldog
 ```
 
 #### 3. 导航+moveit:  
 
 ```sh
-roslaunch manipulator_gazebo manipulator_bringup_moveit.launch
+roslaunch manipulator_gazebo mobile_manipulator_gazebo.launch
+roslaunch manipulator_gazebo mobile_manipulator_moveit.launch
 roslaunch bulldog_navigation move_base_mapless_demo.launch
 rosrun gmapping slam_gmapping
 rosrun manipulator_moveit_config markerpub_star.py
@@ -48,14 +52,15 @@ rosrun manipulator_moveit_config moveit_star.py
 
 ```sh
 roslaunch manipulator_moveit_config demo.launch
-rosrun manipulator_moveit_config markerpub_rose_curve.py  # 需更改manipulator_moveit_config功能包中的moveit_rviz.launch文件中的rviz
+rosrun manipulator_moveit_config markerpub_rose_curve.py
+rosrun manipulator_moveit_config moveit_rose_curve.py
 ```  
 
 #### 5. explore-lite 探索 + moveit + gazebo:  
 
 ```sh
 roslaunch manipulator_gazebo mobile_manipulator_gazebo.launch
-roslaunch manipulator_gazebo mobile_manipulator_moveit.launch
+roslaunch manipulator_gazebo mobile_manipulator_moveit.launch   # 需更改manipulator_moveit_config功能包中的moveit_rviz.launch文件中的rviz场景
 roslaunch bulldog_navigation move_base_mapless_demo.launch
 rosrun gmapping slam_gmapping
 roslaunch explore_lite explore.launch
