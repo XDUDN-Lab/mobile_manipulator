@@ -1,0 +1,3 @@
+<launch>
+<node pkg="grasp_control" name="move_group_python_interface" type="control.py" output="screen"/>
+</launch>
