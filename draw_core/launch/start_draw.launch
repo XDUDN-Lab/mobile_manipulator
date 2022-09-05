@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+ <!-- Run the gcode draw with the gcode path -->
+  <arg name="file" default="$(find draw_core)/scripts/img/gcode_output/neu.gcode"/>
+  <node pkg="draw_core" type="gcode_draw.py" name="gcode_draw" args="$(arg file)" output="screen"/>
+  
+</launch>
