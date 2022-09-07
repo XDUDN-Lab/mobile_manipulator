@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<launch>
+
+  <arg name="model" default="burger" />
+  <!-- Namespace and tf_prefix are assumed to be the same -->
+  <arg name="robot_namespace"/>
+  <group ns="$(arg robot_namespace)">
+
+    <arg name="plugin" default="frontier_exploration::FrontierPlugin"/>
+    <param name="plugin_name" value="$(arg plugin)"/>
+
+    <node pkg="exploration_server" type="plugin_client" name="explore_client" output="screen"  />
+    <node pkg="exploration_server" type="exploration_server_node" name="explore_server" output="screen"  >
+      <rosparam file="$(find multi_turtlebot3_navigation)/config/costmap_common.yaml" command="load" ns="explore_costmap" />
+      <rosparam file="$(find multi_turtlebot3_navigation)/config/costmap_exploration.yaml" command="load" ns="explore_costmap" />
+    </node>
+
+  </group>
+
+</launch>
+

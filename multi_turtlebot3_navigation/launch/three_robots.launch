@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+
+  <include file="$(find multi_turtlebot3_navigation)/launch/move_base_three.launch" />
+  <include file="$(find multi_turtlebot3_navigation)/launch/navigation_three.launch" />
+  
+</launch>
