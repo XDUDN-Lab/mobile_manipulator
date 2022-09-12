@@ -6,6 +6,7 @@
   2. 基于moveit!与Gazebo联合仿真的逆运动学求解算法，动力学验证 —— ``` manipulator_gazebo ```
   3. 基于find_object,opencv,pcl的三维物体位姿解算与自主抓取 —— ``` find-object,opencv,vision_opencv ```
   4. 基于贪婪边界搜索的自主探索算法 —— ``` bulldog_navigation ```
+  5. 基于RRT-GFE的多机器人协同空间探测算法 —— ``` turtlebot3_ros ``` (已更新)
   
 目前，笔者已经在自己的笔记本上(Intel: i7-10750H, Nividia GTX1650Ti, 16G内存)测试通过了上述所有功能包，后续该功能包将一直保持更新状态，未来也会有新的功能陆续加入，敬请期待！
 
@@ -26,6 +27,8 @@
 ```sh
 roslaunch manipulator_gazebo manipulator_bringup_moveit.launch   # 存于old code文件夹下
 or
+```
+```sh
 roslaunch manipulator_gazebo mobile_manipulator_gazebo.launch
 roslaunch manipulator_gazebo mobile_manipulator_moveit.launch
 ```
@@ -101,4 +104,11 @@ roslaunch panda_gazebo panda_bringup_moveit.launch
 roslaunch find_object_2d find_object_3d.launch
 rosrun opencv tf_listener.py
 rosrun grasp_control control.py
+```
+
+#### 10. RRT-GFE 多机器人协同空间探索:  
+
+```sh
+roslaunch multi_turtlebot3_navigation exploring_two.launch
+roslaunch multi_rrt_exploration rrt_two_robots.launch
 ```
