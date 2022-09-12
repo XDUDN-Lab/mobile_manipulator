@@ -26,8 +26,8 @@
 
 ```sh
 roslaunch manipulator_gazebo manipulator_bringup_moveit.launch   # 存于old code文件夹下
-or
 ```
+or
 ```sh
 roslaunch manipulator_gazebo mobile_manipulator_gazebo.launch
 roslaunch manipulator_gazebo mobile_manipulator_moveit.launch
