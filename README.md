@@ -1,6 +1,6 @@
 # mobile_manipulator
 
-#### 介绍
+## 介绍
 移动机械臂作为一种新型协作机器人，受到越来越多学者的广泛关注，该功能包以bulldog移动平台与franka panda七自由度冗余机械臂所组成的移动机械臂系统为研究对象，重点设计和实现以下功能：
   1. 基于moveit!与actionlib机制的七自由度冗余机械臂运动规划算法 —— ``` manipulator_moveit_config ```
   2. 基于moveit!与Gazebo联合仿真的逆运动学求解算法，动力学验证 —— ``` manipulator_gazebo ```
@@ -10,7 +10,7 @@
   
 目前，笔者已经在自己的笔记本上(Intel: i7-10750H, Nividia GTX1650Ti, 16G内存)测试通过了上述所有功能包，后续该功能包将一直保持更新状态，未来也会有新的功能陆续加入，敬请期待！
 
-#### 软件依赖
+## 软件依赖
 [ROS melodic](http://wiki.ros.org/melodic/Installation/Ubuntu) 下所需依赖如下：
 1. [find_object](https://github.com/introlab/find-object/tree/melodic-devel)
 2. [kinect_v2](https://github.com/a-price/kinect_v2_description)
